@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
 import MantrasList from "../components/MantrasList";
 import { getAllMantras } from "../helpers/getAllMatras";
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = (props: { mantras: object[] }) => {
-  console.log(props);
   return (
     <>
       <Head>
@@ -21,14 +20,13 @@ const Home: NextPage<Props> = (props: { mantras: object[] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const mantras = await getAllMantras();
 
   return {
     props: {
       mantras,
     },
-    revalidate: 60,
   };
 };
 

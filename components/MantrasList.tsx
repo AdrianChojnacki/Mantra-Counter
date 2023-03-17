@@ -5,14 +5,20 @@ interface Props {
 }
 
 const MantrasList: FunctionComponent<Props> = ({ mantras }) => {
-  // TODO - any type
-  const mantrasList = mantras.map((mantra: any) => (
-    <li key={mantra.id}>
-      {mantra.id} - {mantra.amount}
-    </li>
-  ));
+  const mantrasList = (
+    <ul style={{ margin: 0 }}>
+      {
+        // TODO: any type
+        mantras.map((mantra: any) => (
+          <li key={mantra.id}>
+            {mantra.id} - {mantra.amount}
+          </li>
+        ))
+      }
+    </ul>
+  );
 
-  return <ul>{mantrasList}</ul>;
+  return mantrasList;
 };
 
 export default MantrasList;

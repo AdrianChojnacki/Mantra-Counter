@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
-import "../styles/variables.scss";
-import "../styles/global.scss";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "../styles/theme";
 
 // TODO: any
 interface Props {
@@ -9,7 +9,11 @@ interface Props {
 }
 
 const App: FunctionComponent<Props> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 };
 
 export default App;

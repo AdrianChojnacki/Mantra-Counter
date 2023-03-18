@@ -11,7 +11,7 @@ const MantrasList: FunctionComponent<Props> = ({ mantras }) => {
         // TODO: any type
         mantras.map((mantra: any) => (
           <li key={mantra.id}>
-            {mantra.id} - {mantra.amount}
+            {mantra.name} - {mantra.done}/{mantra.toDo}
           </li>
         ))
       }

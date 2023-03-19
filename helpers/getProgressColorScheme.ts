@@ -1,19 +1,19 @@
 export const getProgressColorScheme: Function = (percentageValue: number) => {
-  if (percentageValue <= 12.5) {
+  if (percentageValue <= 14) {
     return "cyan";
-  } else if (percentageValue > 12.5 && percentageValue <= 25) {
+  } else if (percentageValue > 14 && percentageValue <= 28) {
     return "blue";
-  } else if (percentageValue > 25 && percentageValue <= 37.5) {
+  } else if (percentageValue > 28 && percentageValue <= 42) {
     return "teal";
-  } else if (percentageValue > 37.5 && percentageValue <= 50) {
+  } else if (percentageValue > 42 && percentageValue <= 56.5) {
     return "green";
-  } else if (percentageValue > 50 && percentageValue <= 62.5) {
+  } else if (percentageValue > 56.5 && percentageValue <= 71) {
     return "yellow";
-  } else if (percentageValue > 62.5 && percentageValue <= 75) {
+  } else if (percentageValue > 71 && percentageValue <= 85.5) {
     return "orange";
-  } else if (percentageValue > 75 && percentageValue <= 87.5) {
+  } else if (percentageValue > 85.5) {
     return "red";
-  } else if (percentageValue > 87.5) {
-    return "pink";
+  } else {
+    return "gray";
   }
 };

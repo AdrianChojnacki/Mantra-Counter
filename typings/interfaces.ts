@@ -17,3 +17,8 @@ export interface MantrasProps {
 export interface MantraProps {
   mantra: Mantra;
 }
+
+export interface MantraModalProps extends MantraProps {
+  isOpen: boolean;
+  onClose: () => void;
+}

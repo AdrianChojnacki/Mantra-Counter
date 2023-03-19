@@ -16,8 +16,8 @@ export const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
       <Table>
         <Thead borderBottom="2px" borderColor="gray.300">
           <Tr>
-            <Th fontSize="lg">Practice</Th>
-            <Th fontSize="lg" isNumeric>
+            <Th fontSize="md">Practice</Th>
+            <Th fontSize="md" isNumeric>
               Progress
             </Th>
           </Tr>

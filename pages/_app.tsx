@@ -1,14 +1,9 @@
 import { FunctionComponent } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../styles/theme";
+import { theme } from "../styles";
+import { AppProps } from "../typings";
 
-// TODO: any
-interface Props {
-  Component: any;
-  pageProps: any;
-}
-
-const App: FunctionComponent<Props> = ({ Component, pageProps }) => {
+const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />

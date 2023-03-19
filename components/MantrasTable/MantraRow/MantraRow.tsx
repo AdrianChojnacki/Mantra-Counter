@@ -1,9 +1,10 @@
 import { FunctionComponent } from "react";
-import { Tr, Td, Progress } from "@chakra-ui/react";
-import { getProgressColorScheme } from "../helpers/getProgressColorScheme";
-import { MantraProps } from "../interfaces";
+import { Tr, Td } from "@chakra-ui/react";
+import { StyledProgress } from "./MantraRow.styles";
+import { getProgressColorScheme } from "../../../helpers";
+import { MantraProps } from "../../../typings";
 
-const MantraRow: FunctionComponent<MantraProps> = ({ mantra }) => {
+export const MantraRow: FunctionComponent<MantraProps> = ({ mantra }) => {
   const { id, name, done, toDo } = mantra;
   const percentageValue = (done / toDo) * 100;
   const colorScheme = getProgressColorScheme(percentageValue);
@@ -12,7 +13,7 @@ const MantraRow: FunctionComponent<MantraProps> = ({ mantra }) => {
     <Tr key={id}>
       <Td>{name}</Td>
       <Td isNumeric>
-        <Progress
+        <StyledProgress
           colorScheme={colorScheme}
           size="sm"
           hasStripe
@@ -24,5 +25,3 @@ const MantraRow: FunctionComponent<MantraProps> = ({ mantra }) => {
     </Tr>
   );
 };
-
-export default MantraRow;

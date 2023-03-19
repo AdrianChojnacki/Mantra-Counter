@@ -1,3 +1,8 @@
+export interface AppProps {
+  Component: any;
+  pageProps: any;
+}
+
 export interface Mantra {
   id: string;
   name: string;

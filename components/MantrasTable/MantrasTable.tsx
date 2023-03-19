@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 import { Table, Thead, Tbody, Tr, Th, TableContainer } from "@chakra-ui/react";
-import MantraRow from "./MantraRow";
-import { getSortedMantras } from "../helpers/getSortedMantras";
-import { Mantra, MantrasProps } from "../interfaces";
+import { MantraRow } from "./MantraRow";
+import { getSortedMantras } from "../../helpers";
+import { Mantra, MantrasProps } from "../../typings";
 
-const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
+export const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
   const sortedMantras = getSortedMantras(mantras);
 
   const mantrasTableRows = sortedMantras.map((mantra: Mantra) => (
@@ -12,8 +12,8 @@ const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
   ));
 
   return (
-    <TableContainer bg="palette.orange">
-      <Table variant="simple">
+    <TableContainer>
+      <Table variant="simple" bgColor="gray.300">
         <Thead>
           <Tr>
             <Th>Practice</Th>
@@ -25,5 +25,3 @@ const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
     </TableContainer>
   );
 };
-
-export default MantrasTable;

@@ -1,4 +1,4 @@
-import { Mantra } from "../interfaces";
+import { Mantra } from "../typings";
 
 export const getSortedMantras: Function = (mantras: Mantra[]) => {
   function sorting(a: Mantra, b: Mantra): number {

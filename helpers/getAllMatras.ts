@@ -1,5 +1,5 @@
 export const getAllMantras: Function = async () => {
-  // TODO: URL type is not enough
+  // TODO: any - tried URL type but it's not enough
   const apiUrl: any = process.env.NEXT_PUBLIC_API_URL;
 
   const response = await fetch(apiUrl);

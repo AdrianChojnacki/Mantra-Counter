@@ -1,13 +1,11 @@
 import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
-import MantrasList from "../components/MantrasList";
+import MantrasTable from "../components/MantrasTable";
 import { getAllMantras } from "../helpers/getAllMatras";
+import { MantrasProps } from "../interfaces";
 
-interface Props {
-  mantras: object[];
-}
-
-const Home: NextPage<Props> = (props: { mantras: object[] }) => {
+// TODO: any
+const Home: NextPage<MantrasProps> = ({ mantras }: any) => {
   return (
     <>
       <Head>
@@ -15,7 +13,7 @@ const Home: NextPage<Props> = (props: { mantras: object[] }) => {
         <meta name="description" content="Application for counting mantras" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MantrasList mantras={props.mantras} />
+      <MantrasTable mantras={mantras} />
     </>
   );
 };

@@ -10,17 +10,23 @@ export const MantraRow: FunctionComponent<MantraProps> = ({ mantra }) => {
   const colorScheme = getProgressColorScheme(percentageValue);
 
   return (
-    <Tr key={id}>
-      <Td>{name}</Td>
-      <Td isNumeric>
+    <Tr
+      key={id}
+      borderBottom="1px"
+      borderColor="gray.300"
+      onClick={() => alert("Click")}
+    >
+      <Td fontSize="lg">{name}</Td>
+      <Td width="100%" fontSize="sm" isNumeric>
         <StyledProgress
+          size="lg"
           colorScheme={colorScheme}
-          size="sm"
+          bgColor="gray.200"
           hasStripe
           isAnimated
           value={percentageValue}
         />
-        {done}/{toDo}
+        {/* {done}/{toDo} */}
       </Td>
     </Tr>
   );

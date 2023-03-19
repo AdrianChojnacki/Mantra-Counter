@@ -12,12 +12,14 @@ export const MantrasTable: FunctionComponent<MantrasProps> = ({ mantras }) => {
   ));
 
   return (
-    <TableContainer>
-      <Table variant="simple" bgColor="gray.300">
-        <Thead>
+    <TableContainer bgColor="white" borderRadius="lg">
+      <Table>
+        <Thead borderBottom="2px" borderColor="gray.300">
           <Tr>
-            <Th>Practice</Th>
-            <Th isNumeric>Done</Th>
+            <Th fontSize="lg">Practice</Th>
+            <Th fontSize="lg" isNumeric>
+              Progress
+            </Th>
           </Tr>
         </Thead>
         <Tbody>{mantrasTableRows}</Tbody>

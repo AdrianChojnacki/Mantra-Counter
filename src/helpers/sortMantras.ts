@@ -1,6 +1,6 @@
 import { Mantra } from "../typings";
 
-export const getSortedMantras: Function = (mantras: Mantra[]) => {
+export const sortMantras: Function = (mantras: Mantra[]) => {
   function sorting(a: Mantra, b: Mantra): number {
     if ((a.done / a.toDo) * 100 > (b.done / b.toDo) * 100) return -1;
     if ((a.done / a.toDo) * 100 < (b.done / b.toDo) * 100) return 1;

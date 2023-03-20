@@ -1,12 +1,9 @@
-import type { NextPage, GetServerSideProps } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
 import { Box } from "@chakra-ui/react";
-import { MantrasTable } from "../components";
-import { getAllMantras } from "../helpers";
-import { MantrasProps } from "../typings";
+import { MantrasTable } from "../src/components";
 
-// TODO: any
-const Home: NextPage<MantrasProps> = ({ mantras }: any) => {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -15,20 +12,10 @@ const Home: NextPage<MantrasProps> = ({ mantras }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box w="100%" p={4}>
-        <MantrasTable mantras={mantras} />
+        <MantrasTable />
       </Box>
     </>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const mantras = await getAllMantras();
-
-  return {
-    props: {
-      mantras,
-    },
-  };
 };
 
 export default Home;

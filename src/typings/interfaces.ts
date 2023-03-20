@@ -22,3 +22,8 @@ export interface MantraModalProps extends MantraProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+export interface AddButtonProps {
+  id: string;
+  children: string;
+}

@@ -11,8 +11,10 @@ export const getProgressColorScheme: Function = (percentageValue: number) => {
     return "yellow";
   } else if (percentageValue > 71 && percentageValue <= 85.5) {
     return "orange";
-  } else if (percentageValue > 85.5) {
+  } else if (percentageValue > 85.5 && percentageValue < 100) {
     return "red";
+  } else if (percentageValue >= 100) {
+    return "pink";
   } else {
     return "gray";
   }

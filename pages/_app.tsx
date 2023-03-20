@@ -1,13 +1,17 @@
 import { FunctionComponent } from "react";
+import { Provider } from "react-redux";
+import { store } from "../src/app/store";
 import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../styles";
-import { AppProps } from "../typings";
+import { theme } from "../src/styles";
+import { AppProps } from "../src/typings";
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </Provider>
   );
 };
 

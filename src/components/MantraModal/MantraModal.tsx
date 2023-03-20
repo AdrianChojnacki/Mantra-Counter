@@ -1,6 +1,5 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import {
-  Progress,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -8,11 +7,13 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
   Box,
   Image,
+  Progress,
   Flex,
+  Button,
 } from "@chakra-ui/react";
+import { AddButton } from "../AddButton";
 import { getProgressColorScheme } from "../../helpers";
 import { MantraModalProps } from "../../typings";
 
@@ -21,10 +22,17 @@ export const MantraModal: FunctionComponent<MantraModalProps> = ({
   isOpen,
   onClose,
 }) => {
-  const { name, done, toDo } = mantra;
+  const { id, name, done, toDo } = mantra;
 
-  const percentageValue = (done / toDo) * 100;
-  const colorScheme = getProgressColorScheme(percentageValue);
+  let percentageValue = (done / toDo) * 100;
+  let colorScheme = getProgressColorScheme(percentageValue);
+  let progressDetails = `${done} / ${toDo}`;
+
+  useEffect(() => {
+    percentageValue = (done / toDo) * 100;
+    colorScheme = getProgressColorScheme(percentageValue);
+    progressDetails = `${done} / ${toDo}`;
+  }, [mantra]);
 
   return (
     <Modal
@@ -59,14 +67,14 @@ export const MantraModal: FunctionComponent<MantraModalProps> = ({
             value={percentageValue}
           />
           <Flex justify="flex-end" fontSize="lg">
-            {done} / {toDo}
+            {progressDetails}
           </Flex>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <AddButton id={id}>Add</AddButton>
+          <Button colorScheme="red" ml={3} onClick={onClose}>
             Close
           </Button>
-          <Button variant="ghost">Secondary Action</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

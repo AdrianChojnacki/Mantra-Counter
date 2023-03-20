@@ -12,7 +12,7 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "var(--chakra-colors-palette-blue)",
+        // bg: "var(--chakra-colors-palette-blue)",
       },
     },
   },
